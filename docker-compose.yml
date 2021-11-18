@@ -42,15 +42,3 @@ services:
       TZ: "Asia/Tokyo"
     volumes:
       - mysql-volume:/var/lib/mysql
-
-  next:
-    build:
-      context: .
-      dockerfile: ./docker/next/Dockerfile
-    volumes:
-      - ./next:/usr/src/app
-    working_dir: /usr/src/app/w-timer
-    command: yarn dev
-    stdin_open: true
-    ports:
-      - "3000:3000"
